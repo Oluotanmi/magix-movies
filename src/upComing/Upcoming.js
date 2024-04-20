@@ -1,6 +1,7 @@
 import React from "react";
 import { useState,useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Upcoming=()=>{
   const [showSidebar, setShowSidebar] = useState(false);
@@ -55,11 +56,32 @@ const Upcoming=()=>{
            </div>
        </div>
 
-       <div className={`sidebar w-64 bg-red-300 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
-          <div className="flex items-center justify-center h-16">
-            <h1 className="text-xl font-bold">Magix-Movies</h1>
+       <div className={`sidebar w-64 bg-red-500 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
+          <div className="flex items-center justify-center h-16 bg-white">
+            <h1 className="text-xl font-extrabold text-red-600">Magix-Movies</h1>          
           </div>
-       </div>
+          <div className="text-center xl:my-20">
+              <Link to='/'>
+                 <p className="text-xl font-extrabold hover:text-blac my-10">Home</p>
+               </Link>
+              <Link to='/movies'>
+                 <p className="text-xl font-extrabold hover:text-black my-10">Movies</p>
+               </Link>
+               <Link to='/series'>
+                 <p className="text-xl font-extrabold hover:text-black my-10">Series</p>
+               </Link>
+               <Link to='/upcoming'>
+                 <p className="text-xl font-extrabold hover:text-blac my-10">Upcoming</p>
+               </Link>
+            </div>
+            <div className="flex justify-center bg-white p-3 hover:bg-black hover:text-white" >
+              <button className=" text-black  hover:text-white font-bold" onClick={toggleSidebar}>
+                   Cancel
+              </button>
+            </div>
+        </div>
+
+       
          <div className="grid grid-cols-5 gap-4">
             {
              data.map(item =>(

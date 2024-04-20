@@ -51,17 +51,17 @@ const settings = {
               {data.map(( item ) =>(
                 <div 
                   key={item.id}               
-                  className= ''  
+               
                   >                 
                     <div className='xl:flex justify-center  sm:inline-block'>
 
-                        <h1 className='text-white xl:p-20 xl:text-6xl xl:my-40 xl:font-extrabold sm:text-lg'>{item.title}</h1>     
+                        <h1 className='text-white xl:p-20 xl:text-4xl xl:my-40 xl:font-extrabold sm:text-3xl sm:font-extrabold sm:my-10'>{item.title}</h1>     
                         <Link to='./movies'>
-                            <button className='bg-red-700 xl:my-40 p-3 rounded-md white font-bold text-white s'>More Movies</button>
+                            <button className='bg-red-700 xl:my-40 p-3 rounded-md white font-bold text-white sm:m-10'>More Movies</button>
                         </Link>
 
-                      <div className=' ' >
-                          <img className='w-80 m-10 rounded-md' src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} />
+                      <div className='sm:justify-center ' >
+                          <img className='xl:w-80 xl:m-10 rounded-md sm:mx-5' src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} />
                       </div>
 
                     </div>

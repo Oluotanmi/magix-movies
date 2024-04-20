@@ -2,6 +2,7 @@ import React from "react"
 import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Movies=()=>{
 
@@ -53,19 +54,43 @@ useEffect(() => {
                 <h1 className="text-center">genre</h1>
             </div>
         </div>
-        <div className={`sidebar w-64 bg-red-300 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
-          <div className="flex items-center justify-center h-16">
-            <h1 className="text-xl font-extrabold text-red-600">Magix-Movies</h1>
+        <div className={`sidebar w-64 bg-red-500 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
+          <div className="flex items-center justify-center h-16 bg-white">
+            <h1 className="text-xl font-extrabold text-red-600">Magix-Movies</h1>          
           </div>
+          <div className="text-center xl:my-20">
+              <Link to='/'>
+                 <p className="text-xl font-extrabold hover:text-blac my-10">Home</p>
+               </Link>
+             <Link to='/movies'>
+                 <p className="text-xl font-extrabold hover:text-black my-10">Movies</p>
+               </Link>
+               <Link to='/series'>
+                 <p className="text-xl font-extrabold hover:text-black my-10">Series</p>
+               </Link>
+               <Link to='/upcoming'>
+                 <p className="text-xl font-extrabold hover:text-blac my-10">Upcoming</p>
+               </Link>
+            </div>
+            <div className="flex justify-center bg-white p-3 hover:bg-black hover:text-white" >
+              <button className=" text-black  hover:text-white font-bold" onClick={toggleSidebar}>
+                   Cancel
+              </button>
+            </div>
         </div>
 
-        <div className="grid grid-cols-5 gap-4">
+        <div className="grid xl:grid-cols-5 sm:gap-5 sm:justify-center ">
             {
-             data.map(item =>(
-             <div className="m-10 " key={item.id}>
-                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm"/>
-                <p className="text-white text-center my-5">{item.title}</p>
-             </div>
+             data.map(movies =>(
+             <Link to={{ 
+                  pathname: `/moviedetails`, 
+                  state: { movieData: movies } 
+                 }} >
+              <div className="m-10 " key={movies.movies}>
+                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-10"/>
+                  <p className="xl:text-black font-bold text-center my-5">{movies.title}</p>
+              </div>
+             </Link>
              ))         
             }
          </div>
