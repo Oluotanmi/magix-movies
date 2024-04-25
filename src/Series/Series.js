@@ -43,12 +43,12 @@ const Series=()=>{
          <div className=" flex bg-black text-center p-2">
            
            <div className="m-10" onClick={toggleSidebar}>
-              <div className="bg-red-500 w-10 h-2 m-2 rounded-sm"></div>
-              <div className="bg-red-500 w-10 h-2 m-2 rounded-sm"></div>
-              <div className="bg-red-500 w-10 h-2 m-2 rounded-sm"></div>
+              <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
+              <div className="bg-red-500 w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
+              <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
            </div>
-           <div className=" text-5xl text-white font-extrabold">
-             <h1 className="text-center m-10 text-red-500">Series</h1>
+           <div className="  text-white font-extrabold">
+             <h1 className="text-center m-10 text-white sm:text-xl xl:text-5xl">Series</h1>
            </div>
            <div className="w-full">
                <h1 className="text-center">genre</h1>
