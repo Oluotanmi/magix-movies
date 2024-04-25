@@ -48,7 +48,7 @@ useEffect(() => {
                <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
             </div>
             <div className=" xl:text-5xl text-white font-extrabold sm:text-xl">
-              <h1 className="text-center m-10  ">Movies</h1>
+              <h1 className="text-center m-10">Movies</h1>
             </div>
             <div className="w-full">
                 <h1 className="text-center">genre</h1>
@@ -79,15 +79,15 @@ useEffect(() => {
             </div>
         </div>
 
-        <div className="grid xl:grid-cols-5 sm:gap-5 sm:justify-center ">
+        <div className="grid xl:grid-cols-5 sm:gap-5 sm:justify-center  ">
             {
              data.map(movies =>(
              <Link to={{ 
                   pathname: `/moviedetails`, 
                   state: { movieData: movies } 
                  }} >
-              <div className="m-10 " key={movies.movies}>
-                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-10"/>
+              <div className="my-5 " key={movies.movies}>
+                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
                   <p className="xl:text-black font-bold text-center my-5">{movies.title}</p>
               </div>
              </Link>

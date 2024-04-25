@@ -15,7 +15,7 @@ const MainRouter = () => {
         <Route  path='/movies' element={<Movies />}/>   
         <Route  path='/series' element={<Series />}/> 
         <Route  path='/upComing' element={<Upcoming />}/> 
-        <Route  path='/moviedetails' element={<MovieDetails/>} />
+        <Route  path='/moviedetails/:' element={<MovieDetails/>} />
     </Routes>
     {/* </Switch> */}
  </div>

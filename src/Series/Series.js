@@ -29,7 +29,7 @@ const Series=()=>{
     axios
       .request(options)
       .then(function (response) {
-        console.log(response.data);
+        console.log(response.data + 'seriiesy');
         setData(response.data.results)
       })
       .catch(function (error) {
@@ -85,9 +85,9 @@ const Series=()=>{
          <div className="grid xl:grid-cols-5 xl:gap-4 sm:justify-center">
             {
              data.map(item =>(
-             <div className="m-10 " key={item.id}>
-                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm"/>
-                <p className="sm:text-black text-center my-5">{item.title}</p>
+             <div className="sm:my-5" key={item.id}>
+                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
+                <p className="sm:text-black font-bold text-center my-5">{item.name}</p>
              </div>
              ))         
             }

@@ -64,7 +64,9 @@ const Body=()=>{
          </div>
 
          <div className="p-20">
+           <Link to='/movies'>
             <button className="justify-right text-white text-center bg-red-700 p-3 rounded-sm font-bold">More movies</button>
+           </Link>
          </div>
         </div>
     )
