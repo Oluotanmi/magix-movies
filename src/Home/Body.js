@@ -35,11 +35,12 @@ const Body=()=>{
     return(
         <div className="bg-black xl:p-5">
          <div className="xl:flex justify-between sm:inline" >
-            <div className="m-10 font-bold">
+            {/* <div className="m-10 font-bold">
                <p className="text-red-700 xl:p-5 sm:p-4">Tending movies ......</p>
-            </div>
+            </div> */}
 
-            <div className="flex xl:m-10 sm:m-20">
+
+            <div className="flex xl:m-10 sm:p-10 text-center">
                <Link to='/movies'>
                  <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-xl">Movies</p>
                </Link>
@@ -50,6 +51,7 @@ const Body=()=>{
                  <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-xl" >Upcoming</p>
                </Link>
             </div>
+
          </div>
 
          <div className="grid xl:grid-cols-5 xl:gap-4 sm:justify-center ">
