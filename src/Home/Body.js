@@ -54,12 +54,12 @@ const Body=()=>{
 
          </div>
 
-         <div className="grid xl:grid-cols-5 xl:gap-4 sm:justify-center ">
+         <div className="grid md:grid-cols-2 xl:grid-cols-5 xl:gap-4 sm:justify-center ">
             {
              data.map(item =>(
              <div className="  sm:justify-center" key={item.id}>
                 <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:justify-center sm:mx-20 xl:m-10 "/>
-                <p className="text-white text-center sm:my-5 xl:my-5">{item.title}</p>
+                <p className="text-white text-center sm:my-5 xl:my-5 font-jaro">{item.title}</p>
              </div>
              ))         
             }

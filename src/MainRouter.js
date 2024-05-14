@@ -5,6 +5,7 @@ import Home from './Home/Home'
 import Upcoming from './upComing/Upcoming'
 import Series from './Series/Series'
 import MovieDetails from './MovieDetails/MovieDetails.js'
+import SeriesDetails from './Series/SeriesDetails'
 
 const MainRouter = () => {
   return ( 
@@ -15,7 +16,8 @@ const MainRouter = () => {
         <Route  path='/movies' element={<Movies />}/>   
         <Route  path='/series' element={<Series />}/> 
         <Route  path='/upComing' element={<Upcoming />}/> 
-        <Route  path='/moviedetails/:' element={<MovieDetails/>} />
+        <Route  path='/moviedetails/:id' element={<MovieDetails />} />
+        <Route  path='/seriesdetails/:id' element={<SeriesDetails />} />
     </Routes>
     {/* </Switch> */}
  </div>

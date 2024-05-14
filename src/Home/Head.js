@@ -54,7 +54,7 @@ const settings = {
                   >                 
                     <div className='xl:flex justify-center sm:justify-center  sm:inline-block'>
                       <div>
-                        <h1 className='text-white xl:p-20 xl:text-4xl xl:my-40 xl:font-extrabold sm:text-xl sm:font-extrabold '>{item.title}</h1>    
+                        <h1 className='text-white xl:p-20 xl:text-4xl xl:my-40 xl:font-extrabold sm:text-xl sm:font-extrabold font-jaro'>{item.title}</h1>    
                       </div>
                        
                         <Link to='./movies'>

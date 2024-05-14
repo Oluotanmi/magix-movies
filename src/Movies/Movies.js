@@ -3,8 +3,9 @@ import { useState } from "react";
 import { useEffect } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import MovieDetails from "../MovieDetails/MovieDetails";
 
-const Movies=()=>{
+const Movies=(props)=>{
 
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -81,14 +82,13 @@ useEffect(() => {
 
         <div className="grid xl:grid-cols-5 sm:gap-5 sm:justify-center  ">
             {
-             data.map(movies =>(
-             <Link to={{ 
-                  pathname: `/moviedetails`, 
-                  state: { movieData: movies } 
-                 }} >
-              <div className="my-5 " key={movies.movies}>
-                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
-                  <p className="xl:text-black font-bold text-center my-5">{movies.title}</p>
+              
+             data.map( movies =>(
+             <Link to={`/moviedetails/${movies.id}`} state={{ movies:movies }}
+                  >
+              <div className="my-5 " key={movies}>
+                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-lg sm:mx-20 xl:m-10"/>
+                  <p className="xl:text-black font-bold text-center my-5 font-jaro">{movies.title}</p>
               </div>
              </Link>
              ))         

@@ -85,11 +85,13 @@ const Series=()=>{
          <div className="grid xl:grid-cols-5 xl:gap-4 sm:justify-center">
             {
              data.map(item =>(
+            <Link to={`/seriesdetails/${item.id}`} state={{ item:item }}>
              <div className="sm:my-5" key={item.id}>
                 <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
                 <p className="sm:text-black font-bold text-center my-5">{item.name}</p>
              </div>
-             ))         
+             </Link>
+             ))        
             }
          </div>
         </>

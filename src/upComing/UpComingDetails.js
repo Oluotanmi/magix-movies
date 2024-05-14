@@ -3,11 +3,11 @@ import { useLocation } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom';
 
 
-const MovieDetails=()=>{
+const UpComingDetails=()=>{
   const navigate = useNavigate()
  
   const location = useLocation();
-  const item = location.state.movies
+  const item = location.state.item
   console.log(item)
 
     return(
@@ -32,4 +32,4 @@ const MovieDetails=()=>{
     )
 }
 
-export default MovieDetails
+export default UpComingDetails;
