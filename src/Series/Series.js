@@ -40,24 +40,20 @@ const Series=()=>{
 
     return(
         <>
-         <div className=" flex bg-black text-center p-2">
-           
-           <div className="m-10" onClick={toggleSidebar}>
+         <div className=" flex bg-black text-center shadow-lg ">   
+           <div className="m-2" onClick={toggleSidebar}>
               <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
               <div className="bg-red-500 w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
               <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
            </div>
-           <div className="  text-white font-extrabold">
-             <h1 className="text-center m-10 text-white sm:text-xl xl:text-5xl">Series</h1>
-           </div>
-           <div className="w-full">
-               <h1 className="text-center">genre</h1>
-           </div>
-       </div>
+           <div className=" my-4 ms-6 text-white font-extrabold">
+             <h1 className="text-center  text-white sm:text-xl xl:text-5xl">Series</h1>
+           </div>      
+         </div>
        
        <div className={`sidebar w-64 bg-red-500 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex items-center justify-center h-16 bg-white">
-            <h1 className="text-xl font-extrabold text-red-600">Magix-Movies</h1>          
+            <h1 className="text-xl font-extrabold text-red-600">Magix-Cinemas</h1>          
           </div>
           <div className="text-center xl:my-20">
                <Link to='/'>
@@ -82,13 +78,13 @@ const Series=()=>{
 
       
 
-         <div className="grid xl:grid-cols-5 xl:gap-4 sm:justify-center">
+         <div className="grid xl:grid-cols-5 xl:gap-5 sm:grid-cols-2 ">
             {
              data.map(item =>(
             <Link to={`/seriesdetails/${item.id}`} state={{ item:item }}>
-             <div className="sm:my-5" key={item.id}>
-                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
-                <p className="sm:text-black font-bold text-center my-5">{item.name}</p>
+             <div className="m-5" key={item.id}>
+                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className=" sm:w-[160px] rounded-lg sm xl:m-10 shadow-lg"/>
+                <p className="sm:text-black font-bold text-center my-3">{item.name} </p>
              </div>
              </Link>
              ))        

@@ -46,6 +46,10 @@ const settings = {
 };
 
     return(
+      <>
+        <div className='bg-red-600 w-full '>
+             <h2 className='text-red-200 text-right p-5 font-extrabold text-lg'>Magix-Cinemas</h2>
+        </div>
         <div className='bg-black sm:text-center sm:p-10'>
              <Slide {...settings}> 
               {data.map(( item ) =>(
@@ -70,6 +74,7 @@ const settings = {
                 ))}
             </Slide> 
         </div>
+      </>
     )
 }
 

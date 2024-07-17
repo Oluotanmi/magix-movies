@@ -5,7 +5,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import MovieDetails from "../MovieDetails/MovieDetails";
 
-const Movies=(props)=>{
+const Movies=()=>{
 
     const [showSidebar, setShowSidebar] = useState(false);
 
@@ -39,38 +39,35 @@ useEffect(() => {
 
 
     return(
-        <div >
-       
-        <div className=" flex bg-black text-center p-2">
-           
-            <div className="m-10" onClick={toggleSidebar}>
+      <div >  
+
+        <div className=" flex bg-black text-center shadow-lg">        
+            <div className="m-2" onClick={toggleSidebar}>
                <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
                <div className="bg-red-500 w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
                <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
             </div>
             <div className=" xl:text-5xl text-white font-extrabold sm:text-xl">
-              <h1 className="text-center m-10">Movies</h1>
-            </div>
-            <div className="w-full">
-                <h1 className="text-center">genre</h1>
+              <h1 className="ms-10 my-4">Movies</h1>
             </div>
         </div>
+
         <div className={`sidebar w-64 bg-red-500 text-white fixed inset-y-0 left-0 transform ${showSidebar? 'translate-x-0' : '-translate-x-full'}`}>
           <div className="flex items-center justify-center h-16 bg-white">
-            <h1 className="text-xl font-extrabold text-red-600">Magix-Movies</h1>          
+            <h1 className="text-xl font-extrabold text-red-600">Magix-cinemas</h1>          
           </div>
           <div className="text-center xl:my-20">
               <Link to='/'>
-                 <p className="text-xl font-extrabold hover:text-blac my-10">Home</p>
+                 <p className="text-lg font-extrabold hover:text-blac my-10">Home</p>
                </Link>
              <Link to='/movies'>
-                 <p className="text-xl font-extrabold hover:text-black my-10">Movies</p>
+                 <p className="text-lg font-extrabold hover:text-black my-10">Movies</p>
                </Link>
                <Link to='/series'>
-                 <p className="text-xl font-extrabold hover:text-black my-10">Series</p>
+                 <p className="text-lg font-extrabold hover:text-black my-10">Series</p>
                </Link>
                <Link to='/upcoming'>
-                 <p className="text-xl font-extrabold hover:text-blac my-10">Upcoming</p>
+                 <p className="text-lg font-extrabold hover:text-blac my-10">Upcoming</p>
                </Link>
             </div>
             <div className="flex justify-center bg-white p-3 hover:bg-black hover:text-white" >
@@ -80,15 +77,13 @@ useEffect(() => {
             </div>
         </div>
 
-        <div className="grid xl:grid-cols-5 sm:gap-5 sm:justify-center  ">
+        <div className="grid xl:grid-cols-5 sm:gap-5 sm:grid-cols-2 sm:justify-center">
             {
-              
              data.map( movies =>(
-             <Link to={`/moviedetails/${movies.id}`} state={{ movies:movies }}
-                  >
-              <div className="my-5 " key={movies}>
-                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-lg sm:mx-20 xl:m-10"/>
-                  <p className="xl:text-black font-bold text-center my-5 font-jaro">{movies.title}</p>
+             <Link to={`/moviedetails/${movies.id}`} state={{ movies:movies }}>
+              <div className="m-5" key={movies}>
+                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className="rounded-lg xl:m-10 sm:w-[160px] justify-center shadow-lg"/>
+                  <p className="text-red-500 font-bold text-center my-5 font-jaro">{movies.title} <br />{movies.release_date}</p>
               </div>
              </Link>
              ))         

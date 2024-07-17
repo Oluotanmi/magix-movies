@@ -26,7 +26,7 @@ const SeriesDetails=()=>{
             <div className='bg-gradient-to-r from-red-200 to bg-pink-300 sm:p-3 rounded-md'>
              <h2 className=' text-center font-extrabold text-red-600 xl:text-3xl'>OVERVIEW</h2>
              <p className='text-white m-2 sm:text-sm  xl:text-xl'>{item.overview}</p>
-          </div>   
+           </div>   
             
         </div>
     )

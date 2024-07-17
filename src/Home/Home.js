@@ -4,9 +4,6 @@ import Head from './Head'
 
 
 const Home=()=>{
-  
-    
-
     return(
         <>
           <Head />

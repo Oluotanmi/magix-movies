@@ -40,34 +40,37 @@ const Body=()=>{
             </div> */}
 
 
-            <div className="flex xl:m-10 sm:p-10 text-center">
+            <div className="flex xl:m-10 sm:p-10 text-center sm:ms-5">
                <Link to='/movies'>
-                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-xl">Movies</p>
+                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-sm">Movies</p>
                </Link>
                <Link to='/series'>
-                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-xl" >Series</p>
+                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-sm" >Series</p>
                </Link>
                <Link to='/upcoming'>
-                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-xl" >Upcoming</p>
+                 <p className="text-white font-bold xl:m-10 sm:m-5 hover:text-red-700 text-sm" >Upcoming</p>
                </Link>
             </div>
 
          </div>
 
-         <div className="grid md:grid-cols-2 xl:grid-cols-5 xl:gap-4 sm:justify-center ">
+         <div className="grid md:grid-cols-2 xl:grid-cols-5 xl:gap-4 sm:grid-cols-2 ">
             {
-             data.map(item =>(
-             <div className="  sm:justify-center" key={item.id}>
-                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:justify-center sm:mx-20 xl:m-10 "/>
-                <p className="text-white text-center sm:my-5 xl:my-5 font-jaro">{item.title}</p>
-             </div>
+             data.map(movies =>(
+             <Link to={`/moviedetails/${movies.id}`} state={{ movies:movies }}>
+              <div className="  sm:justify-center" key={movies.id}>
+                  <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className=" rounded-sm sm:justify-center xl:m-10 sm:w-[130px] sm:mx-9"/>
+                  <p className="text-red-200 text-center sm:my-5 xl:my-5 font-jaro sm:text-[10px]">{movies.title} <br />{movies.release_date}</p>
+                 
+              </div>
+             </Link>
              ))         
             }
          </div>
 
          <div className="p-20">
            <Link to='/movies'>
-            <button className="justify-right text-white text-center bg-red-700 p-3 rounded-sm font-bold">More movies</button>
+            <button className="justify-right text-white text-center bg-red-700 p-3 rounded-sm font-bold text-sm">More movies</button>
            </Link>
          </div>
         </div>

@@ -5,11 +5,13 @@ import { Link } from "react-router-dom";
 
 const Upcoming=()=>{
   const [showSidebar, setShowSidebar] = useState(false);
+  
 
   const toggleSidebar = () => {
     setShowSidebar(!showSidebar);
   };
-
+  
+  
     const [data, setData]=useState([])
     console.log(data)
     
@@ -41,15 +43,15 @@ const Upcoming=()=>{
 
     return(
         <>
-         <div className=" flex bg-black text-center p-2">
+         <div className=" flex bg-black text-center shadow-lg ">
            
-           <div className="m-10" onClick={toggleSidebar}>
+           <div className="m-2" onClick={toggleSidebar}>
               <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
               <div className="bg-red-500 w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
               <div className="bg-red-500 xl:w-10 h-2 m-2 rounded-sm sm:w-5 sm:h-1"></div>
            </div>
-           <div className=" xl:text-5xl sm:text-xl text-white font-extrabold">
-             <h1 className="text-center m-10">Upcoming</h1>
+           <div className=" xl:text-5xl sm:text-xl text-white font-extrabold  ms-6 my-3">
+             <h1 className="text-center ">Upcoming</h1>
            </div>
            <div className="w-full">
                <h1 className="text-center">genre</h1>
@@ -82,13 +84,13 @@ const Upcoming=()=>{
         </div>
 
        
-         <div className="grid xl:grid-cols-5 sm:justify-center">
+         <div className="grid xl:grid-cols-5 sm:grid-cols-2">
             {
              data.map(item =>(
             <Link to={`/seriesdetails/${item.id}`} state={{ item:item }}>
-             <div className="sm:my-5" key={item.id}>
-                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="hover:opacity-0 transition ease-in-out rounded-sm sm:mx-20 xl:m-10"/>
-                <p className="font-bold text-center my-5">{item.title}</p>
+             <div className="sm:m-4" key={item.id}>
+                <img src={`http://image.tmdb.org/t/p/w200${item.poster_path}`} alt="img" className="rounded-lg sm:m xl:m-10 shadow-lg"/>
+                <p className="font-bold text-center my-5">{item.title}<br />{item.release_date}</p>
              </div>
             </Link>
              ))         
