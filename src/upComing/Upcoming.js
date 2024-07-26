@@ -82,8 +82,7 @@ const Upcoming=()=>{
               </button>
             </div>
         </div>
-
-       
+   
          <div className="grid xl:grid-cols-5 sm:grid-cols-2">
             {
              data.map(item =>(

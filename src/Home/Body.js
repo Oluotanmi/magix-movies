@@ -54,14 +54,13 @@ const Body=()=>{
 
          </div>
 
-         <div className="grid md:grid-cols-2 xl:grid-cols-5 xl:gap-4 sm:grid-cols-2 ">
+         <div className="grid md:grid-cols-2 xl:grid-cols-5 xl:gap-4 sm:grid-cols-2 xl:text-center">
             {
              data.map(movies =>(
              <Link to={`/moviedetails/${movies.id}`} state={{ movies:movies }}>
-              <div className="  sm:justify-center" key={movies.id}>
+              <div className=" justify-center " key={movies.id}>
                   <img src={`http://image.tmdb.org/t/p/w200${movies.poster_path}`} alt="img" className=" rounded-sm sm:justify-center xl:m-10 sm:w-[130px] sm:mx-9"/>
-                  <p className="text-red-200 text-center sm:my-5 xl:my-5 font-jaro sm:text-[10px]">{movies.title} <br />{movies.release_date}</p>
-                 
+                  <p className="text-red-200 text-center sm:my-5 xl:my-5 font-jaro sm:text-[10px]">{movies.title} <br />{movies.release_date}</p>              
               </div>
              </Link>
              ))         
